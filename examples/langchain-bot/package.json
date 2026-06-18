@@ -1,0 +1,21 @@
+{
+  "name": "langchain-memory-bot",
+  "version": "0.1.0",
+  "description": "LangChain bot with Walrus persistent memory",
+  "main": "dist/bot.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bot.js",
+    "dev": "ts-node src/bot.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@walrus-memory/sdk": "workspace:*",
+    "dotenv": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
