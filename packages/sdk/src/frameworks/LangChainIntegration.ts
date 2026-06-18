@@ -30,7 +30,7 @@ export class WalrusMemorySaver {
   constructor(config: LangChainMemoryConfig) {
     this.store = config.memoryStore;
     this.sessionId = config.sessionId;
-    this.logger = createLogger(`WalrusMemorySaver:${sessionId}`);
+    this.logger = createLogger(`WalrusMemorySaver:${this.sessionId}`);
   }
 
   /**

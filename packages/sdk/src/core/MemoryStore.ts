@@ -143,7 +143,7 @@ export class MemoryStore implements IAgentMemory {
         const cached = await this.cache.get(this.getCacheKey(key));
         if (cached) {
           this.logger.debug('Cache hit', { key });
-          return cached;
+          return cached as MemoryContent;
         }
       }
 
@@ -458,7 +458,7 @@ export class MemoryStore implements IAgentMemory {
 
     try {
       const all = await this.sui.getAllMemories(this.agentId);
-      await Promise.all(all.map(m => this.delete(m.key || m.id)));
+      await Promise.all(all.map(m => this.sui.deleteMemoryIndex(m.id)));
       this.logger.warn('All memories cleared');
       return true;
     } catch (error) {

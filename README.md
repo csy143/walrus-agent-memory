@@ -101,24 +101,39 @@ Production REST API for memory management.
 ### `@walrus-memory/contracts`
 Sui Move smart contracts for on-chain memory indexing.
 
-## Roadmap
+## Key Innovations
 
-- [x] Architecture design
-- [ ] MVP Phase 1 (4-6 weeks)
-  - [ ] Core memory interfaces
-  - [ ] Walrus adapter
-  - [ ] Sui contracts
-  - [ ] LangChain integration
-- [ ] Phase 2 (6-8 weeks)
-  - [ ] Permission system
-  - [ ] Cross-agent sharing
-  - [ ] Encryption layer
-  - [ ] AutoGen integration
-- [ ] Phase 3 (8-12 weeks)
-  - [ ] Performance optimization
-  - [ ] Dashboard UI
-  - [ ] Developer tools
-  - [ ] Documentation
+This project introduces several novel features that differentiate it from traditional memory solutions:
+
+### 1. **Intelligent Multi-Tier Caching Strategy**
+Automatically adjusts data placement across storage layers based on access patterns:
+- Hot data (frequent access) → Local cache
+- Warm data (moderate access) → Sui on-chain indexing
+- Cold data (infrequent access) → Walrus distributed storage
+- Dynamic promotion/demotion optimizes costs and performance
+
+### 2. **Memory Lifecycle Management (TTL)**
+Context-aware memory expiration for different memory types:
+- Conversation history: Auto-expire after 7 days
+- Task state: Expire when task completes
+- Knowledge base: Manual or permanent retention
+- Tool results: Immediate expiration
+- Significantly reduces storage costs while maintaining data freshness
+
+### 3. **Multi-Dimensional Composite Query & Vector Search**
+Advanced information retrieval beyond simple key-value lookups:
+- Time-range queries
+- Multi-tag filtering
+- Semantic similarity search (embedding-based)
+- Complex AND/OR conditions
+- Enables AI agents to find contextually relevant memories, not just keyword matches
+
+### 4. **Real-Time Memory Synchronization (WebSocket)**
+Enables seamless multi-agent collaboration:
+- WebSocket subscription to memory changes
+- Agent A writes → Agent B receives in real-time
+- Event-driven architecture for complex workflows
+- Permission-isolated sharing between agents
 
 ## Contributing
 
