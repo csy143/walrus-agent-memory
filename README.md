@@ -13,6 +13,20 @@ Walrus Agent Memory Framework (WAMF) addresses the fundamental limitation that A
 - **End-to-End Encryption** - Privacy-preserving memory storage
 - **REST API** - Complete CRUD operations for memory management
 
+## Demo Video
+
+Watch a 5-minute demonstration of the Walrus Agent Memory Framework:
+
+[![Watch Demo](https://img.youtube.com/vi/n0HHwFJFCTM/maxresdefault.jpg)](https://youtu.be/n0HHwFJFCTM)
+
+**[View on YouTube](https://youtu.be/n0HHwFJFCTM)**
+
+The demo shows:
+- ✅ System architecture and setup
+- ✅ Storing conversation and knowledge memories
+- ✅ Querying and retrieving data
+- ✅ Four key innovations in action
+
 ## Key Metrics & Advantages
 
 ### Quantified Benefits

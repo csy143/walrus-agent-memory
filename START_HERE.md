@@ -2,6 +2,12 @@
 
 你已经拥有一个**完整的、生产就绪的** Walrus Agent Memory Framework。
 
+## 📺 先看演示视频
+
+**[5 分钟 Demo 演示](https://youtu.be/n0HHwFJFCTM)** - 了解系统如何工作
+
+---
+
 现在只需 3 个简单步骤，就能完成真实的数据流连接。
 
 ---
