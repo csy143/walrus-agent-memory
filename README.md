@@ -1,6 +1,10 @@
 # Walrus Agent Memory Framework
 
-A production-grade persistent memory solution for AI agents using Sui and Walrus.
+<div align="center">
+  <img src="logo.svg" alt="Walrus Agent Memory Logo" width="120" height="120">
+  
+  **A production-grade persistent memory solution for AI agents using Sui and Walrus.**
+</div>
 
 ## Overview
 
