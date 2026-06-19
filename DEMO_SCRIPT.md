@@ -1,138 +1,130 @@
-# Demo Recording Script - 5 Minutes
+# Demo 录制脚本 - 5 分钟演示
 
-## Overview
+## 概述
 
-This script guides you through a complete 5-minute demonstration of the Walrus Agent Memory Framework.
+这个脚本将引导你完成一个完整的 5 分钟 Walrus Agent Memory Framework 演示。
 
-**Video Specifications:**
-- Duration: 4-5 minutes
-- Resolution: 1920x1080 or 1280x720
-- Format: MP4 (H.264)
-- Audio: Clear voice, English or Chinese
-- Frame Rate: 30fps
-
----
-
-## Pre-Recording Checklist
-
-- [ ] Quiet environment
-- [ ] Close other applications
-- [ ] Terminal with large font (16-18pt)
-- [ ] API not running yet
-- [ ] Recording software ready (OBS, QuickTime, ScreenFlow)
-- [ ] Test audio/microphone
-- [ ] Clear desktop
+**视频规格：**
+- 时长：4-5 分钟
+- 分辨率：1920x1080 或 1280x720
+- 格式：MP4 (H.264)
+- 音频：清晰的语音
+- 帧率：30fps
 
 ---
 
-## Recording Segments
+## 录制前检查清单
 
-### SEGMENT 1: Introduction (0:00-0:45)
+- [ ] 安静的环境
+- [ ] 关闭其他应用
+- [ ] 终端字体调大（16-18pt）
+- [ ] API 还未运行
+- [ ] 录屏软件已准备（OBS、QuickTime 或 ScreenFlow）
+- [ ] 测试音频和麦克风
+- [ ] 清理桌面
 
-**What to show:** Project README and architecture diagram
+---
 
-**What to say:**
+## 演示段落
+
+### 第 1 段：介绍（0:00-0:45）
+
+**要显示的内容：** 项目 README 和架构图
+
+**要说的词：**
+
 ```
-"Welcome to Walrus Agent Memory Framework.
-
-This is a persistent memory solution for AI agents 
-using Sui blockchain and Walrus distributed storage.
+This is Walrus Agent Memory Framework - 
+a persistent memory system for AI agents.
 
 Instead of losing context between sessions, 
-your AI agents can now remember everything 
-- conversations, knowledge, state, and decisions.
+agents can now remember conversations, knowledge, state.
 
-With a unique three-tier architecture:
-- Local cache for speed
-- Sui blockchain for audit logs  
-- Walrus storage for reliability
-
-Let me show you how it works."
+Let me show you how it works.
 ```
 
-**Actions:**
-1. Open README.md or project GitHub page (5 seconds)
-2. Show architecture diagram section (15 seconds)
-3. Point out "Key Innovations" section (15 seconds)
+**操作步骤：**
+1. 打开 README.md 或项目 GitHub 页面（5 秒）
+2. 显示架构图部分（15 秒）
+3. 指向"Key Innovations"部分（15 秒）
 
 ---
 
-### SEGMENT 2: Quick Start (0:45-1:30)
+### 第 2 段：快速开始（0:45-1:30）
 
-**What to show:** Building and starting the API
+**要显示的内容：** 构建和启动 API
 
-**What to say:**
+**要说的词：**
+
 ```
-"First, let's build the project."
+Let's build the project first.
 ```
 
-**Terminal Commands:**
+**终端命令：**
 
 ```bash
-# Build
 cd walrus-agent-memory
 pnpm build
 ```
 
-Wait for build to complete (~5 seconds).
+等待构建完成（约 5 秒）。
 
-**What to say:**
+**要说的词：**
+
 ```
-"Build successful! Now let's start the API."
+Good, build is done. Now starting the API.
 ```
+
+**终端命令：**
 
 ```bash
-# Start API
 cd packages/api
 pnpm start
 ```
 
-Wait for API to start and show:
+等待 API 启动并显示：
 ```
 🚀 API server running on http://localhost:3000
-Endpoints:
-  GET  /health
-  POST /api/memory
-  GET  /api/memory/:key
-  DELETE /api/memory/:key
-  POST /api/query
-  GET  /api/stats
 ```
 
-**What to say:**
+**要说的词：**
+
 ```
-"The API is running with 6 endpoints for managing memories."
+API is up and running. We have 6 endpoints here for managing memories.
 ```
 
 ---
 
-### SEGMENT 3: Health Check (1:30-1:50)
+### 第 3 段：健康检查（1:30-1:50）
 
-**What to show:** Health endpoint verification
+**要显示的内容：** 健康端点验证
 
-**Open new terminal tab** while API is running.
+**操作：** 在 API 运行时打开新的终端标签页
+
+**终端命令：**
 
 ```bash
 curl http://localhost:3000/health
 ```
 
-Expected output:
+预期输出：
 ```json
 {"status":"ok","timestamp":1718728393123}
 ```
 
-**What to say:**
+**要说的词：**
+
 ```
-"The API is healthy and ready to accept requests."
+Good - the API is responding with status OK.
 ```
 
 ---
 
-### SEGMENT 4: Store Memory (1:50-2:45)
+### 第 4 段：存储内存（1:50-2:45）
 
-**What to show:** Storing different memory types
+**要显示的内容：** 存储不同类型的内存
 
-**Store conversation memory:**
+**存储对话内存：**
 
 ```bash
 curl -X POST http://localhost:3000/api/memory \
@@ -149,21 +141,15 @@ curl -X POST http://localhost:3000/api/memory \
   }'
 ```
 
-**What to say:**
-```
-"Let's store a conversation memory. 
-The API returns:
-- A unique ID
-- A Walrus storage ID (where data is stored)
-- A timestamp
+**要说的词：**
 
-This data is now:
-1. Cached locally for fast access
-2. Indexed on Sui blockchain
-3. Stored in Walrus distributed storage"
+```
+Now let's store a conversation. 
+Look at the response - we get back an ID, a Walrus blob ID, and timestamp.
+The data goes into three places: local cache, Sui blockchain, and Walrus.
 ```
 
-**Store knowledge memory:**
+**存储知识内存：**
 
 ```bash
 curl -X POST http://localhost:3000/api/memory \
@@ -179,241 +165,242 @@ curl -X POST http://localhost:3000/api/memory \
   }'
 ```
 
-**What to say:**
+**要说的词：**
+
 ```
-"Different memory types have different lifecycles.
-Knowledge stays permanent. 
-Conversations auto-expire in 7 days.
-This is our lifecycle management innovation - saving 60% storage cost."
+Now storing knowledge memory. Different types have different lifecycles -
+conversations auto-expire in 7 days, knowledge stays permanent.
 ```
 
 ---
 
-### SEGMENT 5: Query & Stats (2:45-3:45)
+### 第 5 段：查询和统计（2:45-3:45）
 
-**What to show:** Retrieving and querying memories
+**要显示的内容：** 检索和查询内存
 
-**Retrieve memory:**
+**检索内存：**
 
 ```bash
 curl http://localhost:3000/api/memory/conversation_001
 ```
 
-**What to say:**
-```
-"We can instantly retrieve the conversation we stored.
-If accessed frequently, it comes from local cache (1-10ms).
-If not accessed recently, it comes from Walrus (300-500ms).
+**要说的词：**
 
-This intelligent caching is our second innovation -
-reducing costs by 85% compared to traditional databases."
+```
+Now retrieving - notice it comes back instantly from the local cache.
+If we hadn't accessed it recently, it would fetch from Walrus instead.
 ```
 
-**Query all memories:**
+**查询所有内存：**
 
 ```bash
 curl -X POST http://localhost:3000/api/query -H 'Content-Type: application/json' -d '{}'
 ```
 
-**What to say:**
-```
-"Our third innovation is advanced querying.
-We support:
-- Semantic similarity search
-- Time-range queries
-- Multi-tag filtering
-- Complex AND/OR conditions
+**要说的词：**
 
-Unlike traditional key-value stores or vector databases,
-we combine structured and semantic search."
+```
+Here we can query all stored memories. 
+We support semantic search, time-range queries, complex filtering.
 ```
 
-**Get statistics:**
+**获取统计信息：**
 
 ```bash
 curl http://localhost:3000/api/stats
 ```
 
-**What to say:**
-```
-"Here's a summary of all stored memories:
-- Total count
-- Total size
-- Breakdown by type
+**要说的词：**
 
-This gives agents insights into their memory state."
+```
+Look - we have 2 memories stored, with the size breakdown.
 ```
 
 ---
 
-### SEGMENT 6: Key Innovations (3:45-4:45)
+### 第 6 段：主要创新（3:45-4:45）
 
-**What to show:** Visual or brief explanation
+**要显示的内容：** 视觉说明或简要解释
 
-**What to say:**
+**要说的词：**
+
 ```
-"Let me summarize the four key innovations:
+What we just saw demonstrates our four key innovations:
 
-1. INTELLIGENT MULTI-TIER CACHING
-   - Hot data → local cache (1ms)
-   - Warm data → Sui (10ms)
-   - Cold data → Walrus (500ms)
-   - Result: 85% cost savings
+First - intelligent multi-tier caching. 
+Hot data stays in local cache for 1ms responses.
+Reduces costs by 85% compared to running 24/7 servers.
 
-2. MEMORY LIFECYCLE MANAGEMENT
-   - Conversations: 7-day auto-expiry
-   - Tasks: Complete-on-expiry
-   - Knowledge: Permanent
-   - Result: 60% storage reduction
+Second - memory lifecycle management.
+Conversations expire after 7 days automatically.
+Knowledge stays permanent. Saves 60% on storage.
 
-3. MULTI-DIMENSIONAL COMPOSITE QUERY
-   - Vector search (semantic similarity)
-   - Structured queries (time, tags, conditions)
-   - Complex filtering (AND/OR)
-   - Result: Find relevant memories, not just keywords
+Third - advanced querying.
+Not just key-value lookup - we do semantic search,
+time-range queries, complex filtering.
 
-4. REAL-TIME MEMORY SYNCHRONIZATION
-   - WebSocket subscriptions
-   - Agent A writes → Agent B receives instantly
-   - Event-driven architecture
-   - Result: True multi-agent collaboration
+Fourth - real-time multi-agent synchronization.
+When one agent writes, others get notified instantly via WebSocket.
 
-Compared to Redis+DB ($21k/year),
-Walrus Memory costs just $260/year.
-Compared to Pinecone ($1.5/GB),
-We're 30x cheaper while offering more features."
+And the cost is 30x cheaper than Pinecone,
+while doing a lot more.
 ```
 
-**Optional:** Open INNOVATIONS.md to show more details
+**可选操作：** 打开 INNOVATIONS.md 显示更多细节
 
 ---
 
-### SEGMENT 7: Closing (4:45-5:00)
+### 第 7 段：结尾（4:45-5:00）
 
-**What to say:**
+**要说的词：**
+
 ```
-"Walrus Agent Memory Framework is production-ready:
+Everything is production-ready.
+The code is fully deployed on Sui TestNet.
+Works with LangChain, AutoGen, and custom frameworks.
 
-✅ Zero TypeScript compilation errors
-✅ 100% API test pass rate
-✅ Deployed on Sui TestNet
-✅ Supports LangChain, AutoGen, custom frameworks
-✅ Complete security & operations documentation
+Try it yourself:
+github.com/csy143/walrus-agent-memory
 
-You can try it yourself:
-- GitHub: github.com/csy143/walrus-agent-memory
-- Start in 5 minutes
-- Deploy to TestNet in 30 minutes
-
-Thank you for watching!"
+Thank you!
 ```
 
 ---
 
-## Recording Tips
+## 录制技巧
 
-### Video Quality
-- Use dark terminal theme (Dracula, Nord, etc.)
-- Enlarge font to 16-18pt
-- Use high contrast colors
+### 视频质量
+- 使用深色终端主题（Dracula、Nord 等）
+- 放大字体到 16-18pt
+- 使用高对比度颜色
 
-### Audio Quality
-- Speak clearly and at moderate pace
-- Pause between commands to let them complete
-- No background noise
-- Test microphone before recording
+### 音频质量
+- 清晰地说话，语速适中
+- 每个命令执行完后暂停
+- 没有背景噪音
+- 录制前测试麦克风
 
-### Timing
-- Don't rush the commands
-- Let each command complete before moving to next
-- Pause ~2 seconds after each output
-- Exact timing doesn't need to be 5:00, 4:30-5:30 is fine
+### 时间管理
+- 不要急着运行命令
+- 让每个命令完全执行
+- 每个输出后暂停约 2 秒
+- 总时长 4:30-5:30 都可以
 
-### Recovery
-- If you make a mistake, stop recording
-- Take a 10-second break
-- Start again from that segment
-- Edit videos together in post-production
+### 出错恢复
+- 如果出错，停止录制
+- 休息 10 秒
+- 从那个段落重新开始
+- 后期用视频编辑器合并
 
 ---
 
-## Post-Recording
+## 后期处理
 
-### Video Editing (Optional)
-If you want to enhance the video:
+### 视频编辑（可选）
 
-1. **Trim & Combine:** Use simple editor (iMovie, DaVinci Resolve)
-2. **Add Title Card:** 30 seconds with project name
-3. **Add Subtitles:** YouTube auto-captions are fine
-4. **Audio Normalize:** Keep consistent volume
+如果想增强视频效果：
 
-### Upload to YouTube
+1. **修剪和合并：** 用简单编辑器（iMovie、DaVinci Resolve）
+2. **添加标题：** 30 秒的项目名称标题卡
+3. **添加字幕：** YouTube 自动字幕可以
+4. **音频标准化：** 保持音量一致
 
-1. Go to youtube.com/upload
-2. Title: "Walrus Agent Memory Framework - Demo"
-3. Description:
+### 上传到 YouTube
+
+1. 访问 youtube.com/upload
+2. 标题：`Walrus Agent Memory Framework - Demo`
+3. 描述：
 ```
 Walrus Agent Memory Framework - Production-Ready 
 Persistent Memory for AI Agents
 
-Demo shows:
-✅ System architecture and key innovations
-✅ API startup and health check
-✅ Storing conversation and knowledge memories
-✅ Querying and retrieving memories
-✅ 4 key innovations explained
+演示内容：
+✅ 系统架构和主要创新
+✅ API 启动和健康检查
+✅ 存储对话和知识内存
+✅ 查询和检索内存
+✅ 4 个主要创新的解释
 
 GitHub: https://github.com/csy143/walrus-agent-memory
 Sui Package: 0x41140bd56f9e0c66141eb9bbbab71397d640055f2b60eb7ef12ca465e9f13f20
 ```
 
-4. Tags: `Walrus`, `Sui`, `AI`, `Agent`, `Memory`, `Blockchain`
-5. Visibility: Public or Unlisted
-6. Copy the video URL
+4. 标签：`Walrus`, `Sui`, `AI`, `Agent`, `Memory`, `Blockchain`
+5. 可见性：公开或不公开
+6. 复制视频 URL
 
 ---
 
-## Troubleshooting
+## 故障排除
 
-**Problem:** API doesn't start
+**问题：** API 无法启动
+
 ```bash
-# Check if port 3000 is in use
+# 检查 3000 端口是否已被使用
 lsof -i :3000
-# Kill the process if needed
+# 杀死进程
 kill -9 <PID>
-# Or use a different port
+# 或使用不同的端口
 PORT=3001 pnpm start
 ```
 
-**Problem:** curl commands fail
+**问题：** curl 命令失败
+
 ```bash
-# Make sure API is running in another terminal
-# Verify with: curl http://localhost:3000/health
+# 确保 API 在另一个终端中运行
+# 验证：curl http://localhost:3000/health
 ```
 
-**Problem:** Package not found error
+**问题：** 包未找到
+
 ```bash
-# Make sure you're in the right directory
+# 确保在正确的目录中
 cd packages/api
-# And npm is installed
-node --version  # Should be 18+
+# 检查 Node.js 已安装
+node --version  # 应该是 18+
 ```
 
 ---
 
-## Success Criteria
+## 成功标准
 
-After recording, verify:
+录制完成后，检查：
 
-- [ ] Video is 4-5 minutes long
-- [ ] Audio is clear (no background noise)
-- [ ] Terminal text is readable
-- [ ] All commands execute successfully
-- [ ] You explained all 4 innovations
-- [ ] Closing message is clear
-- [ ] Video is uploaded to YouTube
-- [ ] YouTube URL is public/shareable
+- [ ] 视频时长 4-5 分钟
+- [ ] 音频清晰（无背景噪音）
+- [ ] 终端文字清晰易读
+- [ ] 所有命令成功执行
+- [ ] 解释了全部 4 个创新点
+- [ ] 结尾信息清晰
+- [ ] 视频已上传到 YouTube
+- [ ] YouTube URL 可公开访问
 
 ---
 
-That's it! You're ready to record. Good luck! 🎬
+## 快速命令参考
+
+**启动 API：**
+```bash
+cd packages/api && pnpm start
+```
+
+**健康检查：**
+```bash
+curl http://localhost:3000/health
+```
+
+**存储内存：**
+```bash
+curl -X POST http://localhost:3000/api/memory \
+  -H 'Content-Type: application/json' \
+  -d '{"key":"test","type":"conversation","data":{}}'
+```
+
+**查询统计：**
+```bash
+curl http://localhost:3000/api/stats
+```
+
+---
+
+祝你录制顺利！🎬
